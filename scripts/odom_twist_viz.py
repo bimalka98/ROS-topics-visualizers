@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import matplotlib.pyplot as plt
-
+from statistics import mean
 
 # Get path to package directory
 csv_path = 'data.csv'
@@ -32,15 +32,14 @@ with open(csv_path) as f:
 start_time = time[0]
 time = [t - start_time for t in time]
 
-# Print min and max of each list: time: min = {}, max = {}
 # Print min and max of each list
-print('time:           min = {:<10.2f} max = {:<10.2f}'.format(min(time), max(time)))
-print('x:              min = {:<10.2f} max = {:<10.2f}'.format(min(x), max(x)))
-print('y:              min = {:<10.2f} max = {:<10.2f}'.format(min(y), max(y)))
-print('odom_linear_x:  min = {:<10.2f} max = {:<10.2f}'.format(min(odom_linear_x), max(odom_linear_x)))
-print('odom_angular_z: min = {:<10.2f} max = {:<10.2f}'.format(min(odom_angular_z), max(odom_angular_z)))
-print('twist_linear_x: min = {:<10.2f} max = {:<10.2f}'.format(min(twist_linear_x), max(twist_linear_x)))
-print('twist_angular_z:min = {:<10.2f} max = {:<10.2f}'.format(min(twist_angular_z), max(twist_angular_z)))
+print('time:           min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(time), max(time), mean(time)))
+print('x:              min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(x), max(x), mean(x)))
+print('y:              min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(y), max(y), mean(y)))
+print('odom_linear_x:  min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(odom_linear_x), max(odom_linear_x), mean(odom_linear_x)))
+print('odom_angular_z: min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(odom_angular_z), max(odom_angular_z), mean(odom_angular_z)))
+print('twist_linear_x: min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(twist_linear_x), max(twist_linear_x), mean(twist_linear_x)))
+print('twist_angular_z:min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(twist_angular_z), max(twist_angular_z), mean(twist_angular_z)))
 
 # Create plots
 # odometry pose x vs y in a separate plot
