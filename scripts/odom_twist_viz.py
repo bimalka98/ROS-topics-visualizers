@@ -44,32 +44,39 @@ print('twist_angular_z:min = {:<10.2f} max = {:<10.2f}'.format(min(twist_angular
 
 # Create plots
 # odometry pose x vs y in a separate plot
-fig = plt.figure()
+fig = plt.figure(figsize=(10, 10))
 ax1 = fig.add_subplot(111)
 ax1.scatter(x, y, s=10, c='b', marker="s", label='odometry')
+ax1.set_xlabel('x')
+ax1.set_ylabel('y')
 ax1.set_title('Odometry: x vs y')
+
+# save plot a png file with max dpi
+plt.savefig('odom_pose_viz.png', dpi=300)
 plt.show()
 
 # rest of the plots in a single plot. share time axis
-fig = plt.figure()
+fig = plt.figure(figsize=(10, 10))
 
 ax1 = fig.add_subplot(411)
 ax1.plot(time, odom_linear_x)
-ax1.set_ylabel('odom_linear_x')
+ax1.set_ylabel('OLX')
 
 ax2 = fig.add_subplot(412)
 ax2.plot(time, odom_angular_z)
-ax2.set_ylabel('odom_angular_z')
+ax2.set_ylabel('OAZ')
 
 
 ax3 = fig.add_subplot(413)
 ax3.plot(time, twist_linear_x)
-ax3.set_ylabel('twist_linear_x')
+ax3.set_ylabel('TLX')
 
 ax4 = fig.add_subplot(414)
 ax4.plot(time, twist_angular_z)
-ax4.set_ylabel('twist_angular_z')
+ax4.set_ylabel('TAZ')
 
+#save plot a png file with max dpi
+plt.savefig('odom_twist_viz.png', dpi=300)
 
 plt.show()
 
