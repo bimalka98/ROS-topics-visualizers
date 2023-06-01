@@ -18,14 +18,15 @@ angular:
 * Results:
 
 ```
-odom_linear_x:  min = -2.46      max = 2.04       avg = 0.05      
-odom_angular_z: min = -0.70      max = 0.62       avg = 0.05      
+odom_yaw:       min = -3.14      max = 3.14       avg = 0.12      
+odom_linear_x:  min = -2.46      max = 2.16       avg = 0.05      
+odom_angular_z: min = -39.34     max = 0.62       avg = -0.01     
 twist_linear_x: min = 0.00       max = 0.05       avg = 0.05      
-twist_angular_z:min = 0.00       max = 0.05       avg = 0.05 
+twist_angular_z:min = 0.00       max = 0.05       avg = 0.05
 ```
 
 ## Figures
 
-![](figures/odom_pose_viz_240s.png)
-![](figures/odom_twist_viz_60s.png)
+![](figures/odom_pose_viz_200s.png)
+![](figures/odom_twist_viz_200s.png)
 
