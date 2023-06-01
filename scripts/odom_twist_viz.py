@@ -33,9 +33,9 @@ start_time = time[0]
 time = [t - start_time for t in time]
 
 # Print min and max of each list
-print('time:           min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(time), max(time), mean(time)))
-print('x:              min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(x), max(x), mean(x)))
-print('y:              min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(y), max(y), mean(y)))
+# print('time:           min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(time), max(time), mean(time)))
+# print('x:              min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(x), max(x), mean(x)))
+# print('y:              min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(y), max(y), mean(y)))
 print('odom_linear_x:  min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(odom_linear_x), max(odom_linear_x), mean(odom_linear_x)))
 print('odom_angular_z: min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(odom_angular_z), max(odom_angular_z), mean(odom_angular_z)))
 print('twist_linear_x: min = {:<10.2f} max = {:<10.2f} avg = {:<10.2f}'.format(min(twist_linear_x), max(twist_linear_x), mean(twist_linear_x)))
