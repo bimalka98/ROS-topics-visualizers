@@ -27,6 +27,6 @@ twist_angular_z:min = 0.00       max = 0.05       avg = 0.05
 
 ## Figures
 
-![](figures/odom_pose_viz_200s.png)
-![](figures/odom_twist_viz_200s.png)
+![](figures/LiDAR/odom_pose_viz_200s.png)
+![](figures/LiDAR/odom_twist_viz_200s.png)
 
