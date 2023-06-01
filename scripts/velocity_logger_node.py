@@ -27,7 +27,7 @@ class VelocityLogger:
         self.write_to_file()
 
     def write_to_file(self):
-        self.file.write(f'{self.odom_linear_x} | {self.twist_linear_x}\n')
+        self.file.write(f'{self.odom_linear_x} , {self.twist_linear_x}\n')
 
     def run(self):
         rospy.spin()

@@ -9,7 +9,7 @@ with open('velocities.txt', 'r') as f:
 x_values = []
 y_values = []
 for line in data:
-    odom_linear_x, twist_linear_x = line.strip().split(' | ')
+    odom_linear_x, twist_linear_x = line.strip().split(',')
     x_values.append(float(odom_linear_x))
     y_values.append(float(twist_linear_x))
 
