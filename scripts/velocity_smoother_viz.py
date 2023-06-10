@@ -29,21 +29,21 @@ with open(csv_path) as f:
 start = time[0]
 time = [t - start for t in time]
 
-# limit number of data points accoridng to to given start time and end time
-start_time = 250
-end_time = 360
+# # limit number of data points accoridng to to given start time and end time
+# start_time = 250
+# end_time = 360
 
-# get the index of the element in time list that is closest to start_time and end_time
-start_index = min(range(len(time)), key=lambda i: abs(time[i]-start_time))
-end_index = min(range(len(time)), key=lambda i: abs(time[i]-end_time))
+# # get the index of the element in time list that is closest to start_time and end_time
+# start_index = min(range(len(time)), key=lambda i: abs(time[i]-start_time))
+# end_index = min(range(len(time)), key=lambda i: abs(time[i]-end_time))
 
-# update lists
-time = time[start_index:end_index]
+# # update lists
+# time = time[start_index:end_index]
 
-cmd_vel_lin_x = cmd_vel_lin_x[start_index:end_index]
-cmd_vel_ang_z = cmd_vel_ang_z[start_index:end_index]
-smoothed_cmd_vel_lin_x = smoothed_cmd_vel_lin_x[start_index:end_index]
-smoothed_cmd_vel_ang_z = smoothed_cmd_vel_ang_z[start_index:end_index]
+# cmd_vel_lin_x = cmd_vel_lin_x[start_index:end_index]
+# cmd_vel_ang_z = cmd_vel_ang_z[start_index:end_index]
+# smoothed_cmd_vel_lin_x = smoothed_cmd_vel_lin_x[start_index:end_index]
+# smoothed_cmd_vel_ang_z = smoothed_cmd_vel_ang_z[start_index:end_index]
 
 
 # Print min and max of each list
@@ -61,12 +61,12 @@ ax0.plot(time, cmd_vel_lin_x)
 ax0.grid(True)
 ax0.set_ylabel('$Cmd: V_{x}$')
 
-ax1 = fig.add_subplot(412, sharex=ax0)
+ax1 = fig.add_subplot(413, sharex=ax0)
 ax1.plot(time, cmd_vel_ang_z)
 ax1.grid(True)
 ax1.set_ylabel('$Cmd: \omega_{z}$')
 
-ax2 = fig.add_subplot(413, sharex=ax0)
+ax2 = fig.add_subplot(412, sharex=ax0)
 ax2.plot(time, smoothed_cmd_vel_lin_x)
 ax2.grid(True)
 ax2.set_ylabel('$Smoothed: V_{x}$')
