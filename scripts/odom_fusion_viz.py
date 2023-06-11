@@ -108,3 +108,33 @@ ax3.set_ylabel('$\Delta \omega_{z}$')
 #save plot a png file with max dpi
 plt.savefig('odom_fusion.png', dpi=300)
 plt.show()
+
+# plots the (x, y) trajectory of the robot for both odometeries
+fig = plt.figure(figsize=(10, 10))
+
+ax0 = fig.add_subplot(111)
+ax0.plot(odom_x_pose_lidar, odom_y_pose_lidar, label='lidar')
+ax0.plot(odom_x_pose_filtered, odom_y_pose_filtered, label='filtered')
+ax0.grid(True)
+ax0.set_xlabel('$x$')
+ax0.set_ylabel('$y$')
+ax0.legend()
+
+#save plot a png file with max dpi
+plt.savefig('odom_fusion_xy_plot.png', dpi=300)
+plt.show()
+
+# plots the (x, y) trajectory of the robot for both odometeries
+fig = plt.figure(figsize=(10, 10))
+
+ax0 = fig.add_subplot(111)
+ax0.scatter(odom_x_pose_lidar, odom_y_pose_lidar, label='lidar', marker='x', alpha=0.5)
+ax0.scatter(odom_x_pose_filtered, odom_y_pose_filtered, label='filtered', marker='o', alpha=0.5)
+ax0.grid(True)
+ax0.set_xlabel('$x$')
+ax0.set_ylabel('$y$')
+ax0.legend()
+
+#save plot a png file with max dpi
+plt.savefig('odom_fusion_xy_scatter.png', dpi=300)
+plt.show()
