@@ -85,22 +85,22 @@ print('odom_ang_z_diff:  mean = {:<10.2f} std = {:<10.2f}'.format(odom_ang_z_dif
 # plot the data in a figure with 4 subplots and shared time axis
 fig = plt.figure(figsize=(20, 10))
 
-ax0 = fig.add_subplot(411)
-ax0.plot(time, odom_x_pose_diff)
-ax0.grid(True)
-ax0.set_ylabel('$\Delta x$')
+# ax0 = fig.add_subplot(411)
+# ax0.plot(time, odom_x_pose_diff)
+# ax0.grid(True)
+# ax0.set_ylabel('$\Delta x$')
 
-ax1 = fig.add_subplot(413, sharex=ax0)
-ax1.plot(time, odom_y_pose_diff)
-ax1.grid(True)
-ax1.set_ylabel('$\Delta y$')
+# ax1 = fig.add_subplot(413, sharex=ax0)
+# ax1.plot(time, odom_y_pose_diff)
+# ax1.grid(True)
+# ax1.set_ylabel('$\Delta y$')
 
-ax2 = fig.add_subplot(412, sharex=ax0)
+ax2 = fig.add_subplot(211)
 ax2.plot(time, odom_lin_x_diff)
 ax2.grid(True)
 ax2.set_ylabel('$\Delta v_{x}$')
 
-ax3 = fig.add_subplot(414, sharex=ax0)
+ax3 = fig.add_subplot(212, sharex=ax2)
 ax3.plot(time, odom_ang_z_diff)
 ax3.grid(True)
 ax3.set_ylabel('$\Delta \omega_{z}$')
