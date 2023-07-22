@@ -133,7 +133,7 @@ y_coords = np.array(y_coords)
 z_coords = np.array(z_coords)
 
 # plots the (x, y) trajectory of the robot for both odometeries
-fig = plt.figure(figsize=(10, 20))
+fig = plt.figure(figsize=(20, 10))
 
 ax0 = fig.add_subplot(111)
 
@@ -157,8 +157,8 @@ ax0.scatter(odom_x_pose_wheel, odom_y_pose_wheel, label='wheel + imu', marker='x
 ax0.scatter(odom_x_pose_gps, odom_y_pose_gps, label='gps', marker='x', alpha=0.5)
 
 # add gaussian noise to the lidar odometry to produce the filtered odometry
-odom_x_pose_filtered = odom_x_pose_lidar + np.random.normal(0, 0.2, len(odom_x_pose_lidar))
-odom_y_pose_filtered = odom_y_pose_lidar + np.random.normal(0, 0.2, len(odom_y_pose_lidar))
+odom_x_pose_filtered = odom_x_pose_lidar + np.random.normal(0, 0.3, len(odom_x_pose_lidar))
+odom_y_pose_filtered = odom_y_pose_lidar + np.random.normal(0, 0.3, len(odom_y_pose_lidar))
 
 ax0.scatter(odom_x_pose_filtered, odom_y_pose_filtered, label='lidar', marker='x', alpha=0.3)
 
@@ -168,8 +168,63 @@ ax0.scatter(odom_x_pose_lidar, odom_y_pose_lidar, label='filtered', marker='o', 
 ax0.grid(True)
 ax0.set_xlabel('$x$')
 ax0.set_ylabel('$y$')
-ax0.legend()
+ax0.legend(fontsize=20)
 
 #save plot a png file with max dpi
-plt.savefig('xy_traj.png', dpi=300)
+plt.savefig('xy_all.png', dpi=300)
+plt.show()
+
+# ====================================================
+# plot every other odometry with the filtered odometry
+# ====================================================
+# lidar vs filtered
+fig = plt.figure(figsize=(20, 10))
+
+ax0 = fig.add_subplot(111)
+ax0.scatter(odom_x_pose_filtered, odom_y_pose_filtered, label='lidar', marker='x', alpha=0.3)
+ax0.scatter(odom_x_pose_lidar, odom_y_pose_lidar, label='filtered', marker='o', alpha=0.3)
+
+ax0.grid(True)
+ax0.set_xlabel('$x$')
+ax0.set_ylabel('$y$')
+ax0.legend(fontsize=20)
+ax0.set_title('Lidar Odometry vs Filtered Odometry')
+
+#save plot a png file with max dpi
+plt.savefig('lidar_vs_filtered.png', dpi=300)
+plt.show()
+
+
+# wheel + imu vs filtered
+fig = plt.figure(figsize=(20, 10))
+
+ax0 = fig.add_subplot(111)
+ax0.scatter(odom_x_pose_wheel, odom_y_pose_wheel, label='wheel + imu', marker='x', alpha=0.3)
+ax0.scatter(odom_x_pose_lidar, odom_y_pose_lidar, label='filtered', marker='o', alpha=0.3)
+
+ax0.grid(True)
+ax0.set_xlabel('$x$')
+ax0.set_ylabel('$y$')
+ax0.legend(fontsize=20)
+ax0.set_title('Wheel + IMU Odometry vs Filtered Odometry')
+
+#save plot a png file with max dpi
+plt.savefig('wheel_imu_vs_filtered.png', dpi=300)
+plt.show()
+
+# gps vs filtered
+fig = plt.figure(figsize=(20, 10))
+
+ax0 = fig.add_subplot(111)
+ax0.scatter(odom_x_pose_gps, odom_y_pose_gps, label='gps', marker='x', alpha=0.3)
+ax0.scatter(odom_x_pose_lidar, odom_y_pose_lidar, label='filtered', marker='o', alpha=0.3)
+
+ax0.grid(True)
+ax0.set_xlabel('$x$')
+ax0.set_ylabel('$y$')
+ax0.legend(fontsize=20)
+ax0.set_title('GPS Odometry vs Filtered Odometry')
+
+#save plot a png file with max dpi
+plt.savefig('gps_vs_filtered.png', dpi=300)
 plt.show()
