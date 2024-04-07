@@ -1,3 +1,34 @@
+During my undergrad final year project, which was about implementing a field robot with autonomous navigation, I faced an issue.
+
+➡ I had a requirement to plot a set of ROS topics (some odometry data) to gain insights. 
+
+We were experimenting to find the best possible sensor fusion method for our robot. 
+
+So the idea was to plot empirical data with the ground truth and compare.
+
+
+➡ What I did was,
+
+1. Collect a ROS bag with necessary topics
+2. Run it
+3. Subscribe to the topics I need
+4. Log them to a CSV
+5. Visualize using Matplotlib.
+
+This repo contains those Python scripts. That's a lot of work when one has to do it over and over again.
+
+
+➡ A few months after the completion of the project I came across [PlotJuggler](https://github.com/facontidavide/PlotJuggler), by chance. (well that was too late!)
+
+This tool solves the same problem I faced, in a much better way, and it integrates well with ROS.
+
+
+➡ If you are someone into robotics and need a time series data viz tool, look no further. 
+
+PlotJuggler is the way to go!
+
+---
+
 # LiDAR Odometry Testing
 
 ## Statistics
